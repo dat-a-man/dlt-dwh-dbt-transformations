@@ -13,8 +13,8 @@ WITH base AS (
     STSR.starred_repo_homepage,
     STSR.starred_repo_stargazers
 
-    FROM `dlt-dev-external.dlthub_dlt_dstar_gazer_data_raw.stargazers_starred_repos` STSR 
-    JOIN `dlt-dev-external.dlthub_dlt_dstar_gazer_data_raw.stargazers` S 
+    FROM `dlthub-analytics.dwh_dlt_stargazers_raw.stargazers_starred_repos` STSR 
+    JOIN `dlthub-analytics.dwh_dlt_stargazers_raw.stargazers` S 
     ON S.user = STSR.user
 
 )

@@ -6,9 +6,9 @@ WITH base AS (
         IR.content AS issue_reaction,
         IR.created_at as issue_reacted_at
     FROM
-      `dlt-dev-external.dwh_github_dlt_raw_20230729102531.issues` I
+      `dlthub-analytics.dwh_github_dlt_raw.issues` I
     JOIN
-      `dlt-dev-external.dwh_github_dlt_raw_20230729102531.issues__reactions` IR
+      `dlthub-analytics.dwh_github_dlt_raw.issues__reactions` IR
     ON
       I._dlt_id = IR._dlt_parent_id
 )

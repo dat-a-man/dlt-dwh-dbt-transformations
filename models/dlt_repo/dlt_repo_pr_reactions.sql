@@ -8,8 +8,8 @@ WITH base AS (
     PRR.content,
     PRR.created_at
 
-    FROM `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests` PR 
-    JOIN `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests__reactions` PRR 
+    FROM `dlthub-analytics.dwh_github_dlt_raw.pull_requests` PR 
+    JOIN `dlthub-analytics.dwh_github_dlt_raw.pull_requests__reactions` PRR 
     ON PR._dlt_id = PRR._dlt_parent_id
 
 )
