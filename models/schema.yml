@@ -1,0 +1,64 @@
+
+version: 2
+
+models:
+    - name: github_issues.sql
+      description: "to check first model"
+      columns:
+          - name: issue_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: dlt_repo_pr
+      description: Transformed version of pull_requests table
+      columns:
+        - name: pr_id
+          description: Identifier for the Pull Request, prefixed with 'dlt-'
+        
+    
+    - name: dlt_repo_pr_review
+      description: Transformed version of reviews table
+      columns:
+        - name: pr_review_id
+          description: Identifier for the Pull Request Review, prefixed with 'dlt-'
+        - name: pr_id
+          description: Identifier for the Pull Request, prefixed with 'dlt-'
+        
+
+    - name: dlt_repo_pr_review_commment
+      description: Transformed version of reviews comments table
+      columns:
+        - name: pr_review_comment_id
+          description: Identifier for the Pull Request Review Comment, prefixed with 'dlt-'
+        - name: pr_review_id
+          description: Identifier for the Pull Request Review, prefixed with 'dlt-'
+
+    - name: dlt_repo_pr_reviews_comments_reactions
+      description: Transformed version of reviews comments reactions table
+      columns:
+        - name: pr_review_comment_reaction_id
+          description: Identifier for the Pull Request Review Comment Reaction, prefixed with 'dlt-'
+        - name: pr_comment_id
+          description: Identifier for the Pull Request Comment, prefixed with 'dlt-'
+        # More columns here...
+
+
+    - name: dlt_repo_comments
+      description: Transformed version of comments table
+      columns:
+        - name: pr_comment_id
+          description: Identifier for the Pull Request Comment, prefixed with 'dlt-id'
+        - name: pr_id
+          description: Identifier for the Pull Request, prefixed with 'dlt-'
+        # More columns here...
+
+
+    - name: dlt_repo_comment_reactions
+      description: Transformed version of comment reactions table
+      columns:
+        - name: pr_comment_reaction_id
+          description: Identifier for the Pull Request Comment Reactions, prefixed with 'dlt-'
+        - name: pr_comment_id
+          description: Identifier for the Pull Request Comment, prefixed with 'dlt-'
+        # More columns here...
