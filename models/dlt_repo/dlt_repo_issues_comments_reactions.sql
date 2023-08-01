@@ -8,13 +8,13 @@ WITH base AS (
         ICR.content AS author_reaction,
         ICR.created_at as reacted_at
     FROM
-        `dlt-dev-external.dwh_github_dlt_raw_20230729102531.issues` I
+        `dlthub-analytics.dwh_github_dlt_raw.issues` I
     JOIN
-        `dlt-dev-external.dwh_github_dlt_raw_20230729102531.issues__comments` IC
+        `dlthub-analytics.dwh_github_dlt_raw.issues__comments` IC
     ON
         I._dlt_id = IC._dlt_parent_id
     JOIN
-        `dlt-dev-external.dwh_github_dlt_raw_20230729102531.issues__comments__reactions` ICR
+        `dlthub-analytics.dwh_github_dlt_raw.issues__comments__reactions` ICR
     ON
         IC._dlt_id = ICR._dlt_parent_id
 )

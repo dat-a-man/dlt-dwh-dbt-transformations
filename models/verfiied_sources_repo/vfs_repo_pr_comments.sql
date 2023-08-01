@@ -10,8 +10,8 @@ WITH base AS (
     PRC.created_at,
     PRC.reactions_total_count as comment_total_reactions
 
-    FROM `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests__comments` PRC 
-    JOIN `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests` PR 
+    FROM `dlthub-analytics.dwh_github_vfs_raw.pull_requests__comments` PRC 
+    JOIN `dlthub-analytics.dwh_github_vfs_raw.pull_requests` PR 
     ON PR._dlt_id = PRC._dlt_parent_id
 
 )

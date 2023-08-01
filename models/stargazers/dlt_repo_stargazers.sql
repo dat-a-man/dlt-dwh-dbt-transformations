@@ -4,7 +4,7 @@ WITH base AS (
     CONCAT('dlt-',_dlt_id) as stargazers_id,
     user, 
     starred_at 
-    FROM `dlt-dev-external.dlthub_dlt_dstar_gazer_data_raw.stargazers`
+    FROM `dlthub-analytics.dwh_dlt_stargazers_raw.stargazers`
 
 )
 

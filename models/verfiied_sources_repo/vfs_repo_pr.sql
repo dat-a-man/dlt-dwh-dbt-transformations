@@ -21,7 +21,7 @@ WITH base AS (
     merged_at,
     merged_by__login
 
-    FROM `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests`
+    FROM `dlthub-analytics.dwh_github_vfs_raw.pull_requests`
 
 )
 

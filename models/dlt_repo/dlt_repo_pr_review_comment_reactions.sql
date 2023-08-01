@@ -8,12 +8,12 @@ WITH base AS (
     CONCAT('dlt-',PR.number) as pr_id,
     PRRRCR.content
 
-    FROM `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests__reviews__nodes__comments__nodes` PRRRC 
-    JOIN `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests__reviews__nodes__comments__nodes__reactions__nodes` PRRRCR 
+    FROM `dlthub-analytics.dwh_github_dlt_raw.pull_requests__reviews__nodes__comments__nodes` PRRRC 
+    JOIN `dlthub-analytics.dwh_github_dlt_raw.pull_requests__reviews__nodes__comments__nodes__reactions__nodes` PRRRCR 
     ON PRRRC._dlt_id = PRRRCR._dlt_parent_id
-    JOIN `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests__reviews__nodes` PRRR 
+    JOIN `dlthub-analytics.dwh_github_dlt_raw.pull_requests__reviews__nodes` PRRR 
     ON PRRR._dlt_id = PRRRC._dlt_parent_id
-    JOIN `dlt-dev-external.dwh_github_dlt_raw_20230729102531.pull_requests` PR
+    JOIN `dlthub-analytics.dwh_github_dlt_raw.pull_requests` PR
     ON PR._dlt_id = PRRR._dlt_parent_id
     
 )

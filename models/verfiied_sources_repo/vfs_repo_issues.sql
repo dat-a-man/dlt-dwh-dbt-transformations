@@ -16,13 +16,13 @@ WITH base AS (
     I.reactions_total_count,
     I.comments_total_count
   FROM
-    `dlt-dev-external.dwh_github_vfs_raw_20230731050204.issues` I
+    `dlthub-analytics.dwh_github_vfs_raw.issues` I
   JOIN
-    `dlt-dev-external.dwh_github_vfs_raw_20230731050204.issues__assignees__nodes` IAN
+    `dlthub-analytics.dwh_github_vfs_raw.issues__assignees__nodes` IAN
   ON
     I._dlt_id = IAN._dlt_parent_id
   JOIN
-    `dlt-dev-external.dwh_github_vfs_raw_20230731050204.issues__labels__nodes` ILN
+    `dlthub-analytics.dwh_github_vfs_raw.issues__labels__nodes` ILN
   ON
     I._dlt_id = ILN._dlt_parent_id
 )

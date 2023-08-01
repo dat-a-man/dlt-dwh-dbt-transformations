@@ -9,10 +9,10 @@ WITH base AS (
     PRCR.content,
     PRCR.created_at
 
-    FROM `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests__comments__reactions` PRCR 
-    JOIN `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests__comments` PRC 
+    FROM `dlthub-analytics.dwh_github_vfs_raw.pull_requests__comments__reactions` PRCR 
+    JOIN `dlthub-analytics.dwh_github_vfs_raw.pull_requests__comments` PRC 
     ON PRC._dlt_id = PRCR._dlt_parent_id
-    JOIN `dlt-dev-external.dwh_github_vfs_raw_20230731050204.pull_requests` PR 
+    JOIN `dlthub-analytics.dwh_github_vfs_raw.pull_requests` PR 
     ON PR._dlt_id = PRC._dlt_parent_id
 )
 

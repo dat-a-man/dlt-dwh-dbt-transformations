@@ -9,9 +9,9 @@ SELECT
   IC.author__login as author_commented, 
   IC.created_at as commented_at
 FROM
-  `dlt-dev-external.dwh_github_vfs_raw_20230731050204.issues` I
+  `dlthub-analytics.dwh_github_vfs_raw.issues` I
 JOIN
-  `dlt-dev-external.dwh_github_vfs_raw_20230731050204.issues__comments` IC
+  `dlthub-analytics.dwh_github_vfs_raw.issues__comments` IC
 ON
   I._dlt_id = IC._dlt_parent_id
 
